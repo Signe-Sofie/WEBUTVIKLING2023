@@ -15,19 +15,97 @@
         </header>
         <section>
             <article>
+                <form method="post" action="#" autocomplete="on">
+                    <label>E-postadresse</label>
+                    <input type="email" name="email" placeholder="nora@epost.no.." id="email">
+                    <label for="password">passord</label>
+                    <input type="password" name="password" placeholder="******" id="password">
+                </form>
                 <button onclick="openClose(`flex`)">Opprett ny konto</button>
             </article>
             <p><strong>Opprett en side</strong> for en kjendis, et merke eller en bedrift.</p>
         </section>
     </main>
     <section id="user-registration">
-        <form id="user-reg">
+        <form id="user-reg" method="post" action="#" autocomplete="on">
             <span onclick="openClose(`none`)">X</span>
+            <h3>Registrer bruker</h3>
+            <h4>det er rakt og det er lett</h4>
+            <label for="name">
+                fornavn 
+                <input type="text" name="fname" placeholder="Nora nordman..">
+            </label>
+            <label>
+                etternavn
+                <input type="text" name="lname" placeholder="Nordman..">
+            </label>
+            <label>E-postadresse</label>
+            <input type="email" name="user-reg-email" id="user-reg-email" placeholder="nora@epost.no..">
+            <label for="user-reg-pass">passord</label>
+            <input type="password" name="user-reg-pass" id="user-reg-pass" placeholder="*********">
+            <label class="select-option-text">Fødselsdato</label>
+            <select id="day" name="daylist" form="user-reg">
+                
+            </select>
+            <select id="month" name="monthlist" form="user-reg">
+                <option value="jan">jan.</option>
+                <option value="feb">feb.</option>
+                <option value="marks">mars.</option>
+                <option value="april">april.</option>
+                <option value="mai">mai.</option>
+                <option value="juni">juni.</option>
+                <option value="juli">juli.</option>
+                <option value="aug">aug.</option>
+                <option value="sept">sept.</option>
+                <option value="okt">okt.</option>
+                <option value="nov">now.</option>
+                <option value="des">des.</option>
+            </select>
+            <select id="yearlist" form="user-reg">
+
+            </select>
+            <label class="select-option-text">Kjønn</label>
+            <label class="radio-label">
+                kvinne
+                <input type="radio" value="kvinne" id="kvinne" name="gender">
+            </label>
+            <label class="radio-label">
+                mann
+                <input type="radio" value="mann" id="mann" name="gender">
+            </label>
+            <label class="radio-label">
+                egendefinert
+                <input type="radio" value="egen" id="egen" name="gender">
+            </label>
+            <p>hhhhhhhhhhhhhhhhhhhhhaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhah<a href="#">les mer</a></p>
+            <p>ajajjajjajjajjaakkajjjdjsaskskk </p>
         </form>
         
     </section>
 
     <script>
+
+        let dayList = document.getElementById("day")
+        let yearlist = document.getElementById("year")
+        let thisYear = new Date().getFullYear()
+
+        let dayList = document.getElementById("day")
+
+        for(let i = 1; i <= 31; i++){
+            let option = new Option(i,i)
+            dayList.appendChild(option)
+        }
+
+        for(let i = 1; i <= 31; i++){
+            let option = new Option(i,i)
+            dayList.appendChild(option)
+        }
+
+        for(let i = thisYear; i >= thisYear - 100; i--){
+            let option = new Option(i,i)
+            /*legg til den siste linja, ho fjerna den*/
+        }
+
         const openClose = (value)=>{
             document.getElementById("user-registration").style.display = value;
         }
