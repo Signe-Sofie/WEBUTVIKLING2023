@@ -19,7 +19,9 @@
                     <label>E-postadresse</label>
                     <input type="email" name="email" placeholder="nora@epost.no.." id="email">
                     <label for="password">passord</label>
-                    <input type="password" name="password" placeholder="******" id="password">
+                    <input type="password" name="password" placeholder="******" id="password" required>
+                    <input type="submit" value="Logg inn">
+                    <a href="#">glemt passord?</a>
                 </form>
                 <button onclick="openClose(`flex`)">Opprett ny konto</button>
             </article>
@@ -79,6 +81,7 @@
             </label>
             <p>hhhhhhhhhhhhhhhhhhhhhaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhah<a href="#">les mer</a></p>
             <p>ajajjajjajjajjaakkajjjdjsaskskk </p>
+            <input type="submit" value="Registrer">
         </form>
         
     </section>
@@ -103,6 +106,7 @@
 
         for(let i = thisYear; i >= thisYear - 100; i--){
             let option = new Option(i,i)
+            yearlist.appendChild(option)
             /*legg til den siste linja, ho fjerna den*/
         }
 
